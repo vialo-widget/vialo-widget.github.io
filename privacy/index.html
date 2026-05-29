@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#0A3D0F" media="(prefers-color-scheme: light)">
+  <title>Privacy Policy — Vialo</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Crect width='108' height='108' fill='%23000'/%3E%3Cpolygon points='73.8,34.2 59.7,48.3 62.7,59.7' fill='%23fff'/%3E%3Cpolygon points='73.8,34.2 48.3,59.7 59.7,48.3' fill='%23BDBDBD'/%3E%3Ccircle cx='54' cy='54' r='3.5' fill='%23fff'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary:        #0A3D0F;
+      --primary-container: #B6F0BB;
+      --on-primary-container: #002106;
+      --surface:        #FCFCF7;
+      --on-surface:     #1B1C18;
+      --on-surface-variant: #44483D;
+      --outline:        #74796D;
+      --outline-variant: #C4C8B9;
+      --icon-bg:        #000000;
+      --backdrop-1:     #11140F;
+      --backdrop-2:     #1F1F1F;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary:        #8FDB91;
+        --primary-container: #00531D;
+        --on-primary-container: #AAF7AC;
+        --surface:        #1B1C18;
+        --on-surface:     #E2E3DB;
+        --on-surface-variant: #C5C8BA;
+        --outline:        #8E9285;
+        --outline-variant: #44483D;
+        --backdrop-1:     #000000;
+        --backdrop-2:     #11140F;
+      }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background: radial-gradient(ellipse at top, var(--backdrop-2) 0%, var(--backdrop-1) 70%);
+      color: var(--on-surface);
+      padding: 32px 16px 64px;
+      line-height: 1.55;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 8px 4px 24px;
+      color: var(--surface);
+    }
+    .logo {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: var(--icon-bg);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .logo svg { width: 100%; height: 100%; display: block; }
+    .header .text { display: flex; flex-direction: column; line-height: 1.2; }
+    .header .brand { font-size: 18px; font-weight: 700; color: #FCFCF7; letter-spacing: -0.01em; }
+    .header .crumb { font-size: 13px; color: #A8AC9F; }
+    .card {
+      background: var(--surface);
+      border-radius: 28px;
+      padding: 36px 32px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: var(--primary);
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .updated {
+      color: var(--on-surface-variant);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 28px;
+    }
+    h2 {
+      color: var(--on-surface);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 32px 0 10px;
+    }
+    h2:first-of-type { margin-top: 0; }
+    p, li { color: var(--on-surface); font-size: 15px; }
+    p + p { margin-top: 10px; }
+    ul, ol { margin: 8px 0 0 4px; padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    li::marker { color: var(--outline); }
+    a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { text-decoration-thickness: 2px; }
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--primary-container);
+      color: var(--on-primary-container);
+      margin-right: 6px;
+    }
+    .callout {
+      background: var(--primary-container);
+      color: var(--on-primary-container);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin: 18px 0;
+      font-size: 14px;
+    }
+    .footer {
+      text-align: center;
+      color: #A8AC9F;
+      font-size: 13px;
+      margin-top: 24px;
+    }
+    .footer a { color: #C8CCBE; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#FFFFFF" fill-opacity="0.18"
+                d="M54,16c-20.99,0 -38,17.01 -38,38s17.01,38 38,38 38,-17.01 38,-38 -17.01,-38 -38,-38zM54,88c-18.78,0 -34,-15.22 -34,-34s15.22,-34 34,-34 34,15.22 34,34 -15.22,34 -34,34z"/>
+          <path fill="#FFFFFF" fill-opacity="0.6" d="M77.5,25.1 L79.6,27.2 L74.1,32.7 L72,30.6 Z"/>
+          <path fill="#FFFFFF" d="M73.8,34.2 L59.7,48.3 L62.7,59.7 Z"/>
+          <path fill="#BDBDBD" d="M73.8,34.2 L48.3,59.7 L59.7,48.3 Z"/>
+          <path fill="#FFFFFF" fill-opacity="0.9"
+                d="M54,50.5c-1.93,0 -3.5,1.57 -3.5,3.5s1.57,3.5 3.5,3.5 3.5,-1.57 3.5,-3.5 -1.57,-3.5 -3.5,-3.5z"/>
+        </svg>
+      </div>
+      <div class="text">
+        <span class="brand">Vialo</span>
+        <span class="crumb"><a href="/" style="color:inherit;text-decoration:none;">vialo-widget.github.io</a> &nbsp;/&nbsp; privacy</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated 29 May 2026</p>
+
+      <div class="callout">
+        Vialo runs entirely on your phone. There is no Vialo server. We do not have an account system, we do not collect analytics, and we cannot see your shortcuts or your location.
+      </div>
+
+      <h2>What Vialo stores</h2>
+      <p>Everything you save in Vialo — the names, coordinates, addresses, icons, and expiry dates of your shortcuts — is stored only in Vialo&rsquo;s private database on your device. None of it is uploaded anywhere. If you uninstall the app, every shortcut and every preference is deleted along with it.</p>
+
+      <h2>Location permission</h2>
+      <p>Vialo asks for location permission for one purpose: when you tap &ldquo;Save where I am&rdquo; while adding a shortcut, Vialo reads your current latitude and longitude so it can fill in the place automatically. The reading is used immediately and saved into the shortcut you are creating. It is not sent anywhere outside your device.</p>
+      <p>You can deny location permission and still use Vialo by searching for places by name or pasting coordinates.</p>
+
+      <h2>Place search</h2>
+      <p>When you type the name of a place in Vialo&rsquo;s search field, the text you typed is sent to <a href="https://nominatim.openstreetmap.org" target="_blank" rel="noopener">Nominatim</a>, the geocoding service operated by the OpenStreetMap Foundation. Nominatim returns matching places so Vialo can show them as suggestions. Reverse-geocoding (turning a lat/lng into an address) uses the same service.</p>
+      <p>Vialo sends only the search text or coordinates. It does not send any identifier that links a query to you. OpenStreetMap&rsquo;s privacy notice is here: <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">wiki.osmfoundation.org/wiki/Privacy_Policy</a>.</p>
+
+      <h2>Navigation</h2>
+      <p>Tapping a shortcut opens Google Maps with the saved coordinates. Google Maps&rsquo; own privacy policy applies once the app hands off to Maps; Vialo is not involved past that point.</p>
+
+      <h2>Sharing a shortcut</h2>
+      <p>When you share a shortcut, Vialo builds a link that contains the place name, coordinates, icon, and optional expiry duration, then hands the link to the system share sheet. You choose who to send it to and through which app. Vialo does not transmit the link itself.</p>
+      <p>When the recipient taps the link, this share page (<code>vialo-widget.github.io</code>) is loaded by their browser. The page is static HTML — it does not log the visit, it does not call any tracker, and the place data stays in the URL fragment shown in their address bar.</p>
+
+      <h2>Notifications</h2>
+      <p>Vialo schedules local reminders for shortcuts that have an expiry date. These notifications are scheduled by Android&rsquo;s own WorkManager on your device. Vialo does not use push notifications and does not contact a server to deliver them.</p>
+
+      <h2>What Vialo does not do</h2>
+      <ul>
+        <li>No account, no sign-in, no email, no phone number.</li>
+        <li>No analytics, no crash reporting, no telemetry.</li>
+        <li>No advertising, no ad SDKs, no third-party tracking.</li>
+        <li>No background location collection.</li>
+        <li>No data sold, traded, or shared with any party.</li>
+      </ul>
+
+      <h2>Children</h2>
+      <p>Vialo is designed for general use, including elderly users and family members helping them. It does not target children, it has no ads, and it does not collect any data from any user — including children.</p>
+
+      <h2>Deleting your data</h2>
+      <p>Open Vialo and delete the shortcuts you no longer want from the home screen. To remove everything Vialo stores, uninstall the app from your phone: Android will delete the Vialo database and preferences with the app.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>If the practices above change, this page will be updated and the &ldquo;last updated&rdquo; date will reflect the new version. Material changes will be noted in a subsequent app release.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this policy: <a href="mailto:contact@vialo.app">contact@vialo.app</a></p>
+    </div>
+
+    <div class="footer">
+      &copy; 2026 Vialo &middot; <a href="/">Home</a>
+    </div>
+  </div>
+</body>
+</html>
