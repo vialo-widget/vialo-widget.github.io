@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vialo - One-tap Navigation</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #052008 0%, #0a3d0f 50%, #1B5E20 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px 32px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+      background: #0a3d0f;
+      border-radius: 20px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo svg { width: 50px; height: 50px; }
+    h1 { color: #0a3d0f; font-size: 28px; margin-bottom: 8px; }
+    .subtitle { color: #666; font-size: 16px; margin-bottom: 24px; }
+    .place-name {
+      background: #F0F7F0;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+      border: 1.5px solid #C8E6C9;
+    }
+    .place-name .icon { font-size: 32px; margin-bottom: 8px; }
+    .place-name .name { font-size: 22px; font-weight: 600; color: #1A1A2E; }
+    .place-name .sublabel {
+      font-size: 13px;
+      color: #888;
+      margin-top: 4px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      border-radius: 16px;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 12px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.1s;
+    }
+    .btn:active { transform: scale(0.98); opacity: 0.9; }
+    .btn-primary {
+      background: #2E7D32;
+      color: white;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #2E7D32;
+      border: 2px solid #2E7D32;
+      padding: 16px;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 4px 0 16px;
+      color: #bbb;
+      font-size: 13px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e0e0e0;
+    }
+    .features {
+      text-align: left;
+      margin: 20px 0 8px;
+      padding: 0 8px;
+    }
+    .features li {
+      color: #444;
+      font-size: 15px;
+      margin-bottom: 8px;
+      list-style: none;
+      padding-left: 28px;
+      position: relative;
+    }
+    .features li::before {
+      content: attr(data-icon);
+      position: absolute;
+      left: 0;
+      font-size: 16px;
+    }
+    .hidden { display: none; }
+    #error-state .emoji { font-size: 48px; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <svg viewBox="0 0 108 108">
+        <path fill="rgba(255,255,255,0.18)" d="M54,16c-20.99,0-38,17.01-38,38s17.01,38,38,38 38-17.01,38-38-17.01-38-38-38zM54,88c-18.78,0-34-15.22-34-34s15.22,-34,34-34 34,15.22,34,34-15.22,34-34,34z"/>
+        <polygon fill="#FFFFFF" points="73.8,34.2 59.7,48.3 62.7,59.7"/>
+        <polygon fill="#A5D6A7" points="73.8,34.2 48.3,59.7 59.7,48.3"/>
+        <polygon fill="rgba(255,255,255,0.35)" points="34.2,73.8 48.3,59.7 45.3,48.3"/>
+        <polygon fill="rgba(165,214,167,0.3)" points="34.2,73.8 59.7,48.3 48.3,59.7"/>
+        <circle fill="rgba(255,255,255,0.9)" cx="54" cy="54" r="3.5"/>
+      </svg>
+    </div>
+    <h1>Vialo</h1>
+    <p class="subtitle">One-tap navigation for everyone</p>
+
+    <!-- Main content (shown immediately) -->
+    <div id="main-content" class="hidden">
+      <div class="place-name">
+        <div class="icon" id="place-icon"></div>
+        <div class="name" id="place-label"></div>
+        <div class="sublabel">Shared via Vialo</div>
+      </div>
+
+      <!-- Primary: download -->
+      <a id="btn-download" class="btn btn-primary"
+         href="https://github.com/vialo-widget/location-shortcut-widget/releases/download/latest/app-release.apk">
+        &#x2B07;&#xFE0F;&nbsp; Download Vialo (Free)
+      </a>
+
+      <p style="color:#888;font-size:13px;margin-bottom:12px;">
+        Download &amp; install, then open this link again to add the place.
+      </p>
+
+      <div class="divider">already installed?</div>
+
+      <!-- Secondary: open app -->
+      <a id="btn-open-app" class="btn btn-secondary" href="#">
+        Open in Vialo
+      </a>
+
+      <ul class="features">
+        <li data-icon="&#x2705;">Save places as one-tap shortcuts</li>
+        <li data-icon="&#x1F4F1;">Home screen widget for instant access</li>
+        <li data-icon="&#x1F91D;">Share locations with family easily</li>
+        <li data-icon="&#x1F9D3;">Designed for seniors &mdash; big buttons, simple UI</li>
+      </ul>
+    </div>
+
+    <!-- Error state -->
+    <div id="error-state" class="hidden">
+      <div class="emoji">&#x1F9ED;</div>
+      <p style="color:#666;font-size:16px;margin-bottom:24px;">
+        This link doesn&rsquo;t contain a valid location.<br>
+        Ask the sender to share it again from Vialo.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const iconMap = {
+      home: '\u{1F3E0}', hospital: '\u{1F3E5}', bank: '\u{1F3E6}', grocery: '\u{1F6D2}',
+      temple: '\u{1F6D5}', mosque: '\u{1F54C}', church: '\u26EA', pharmacy: '\u{1F48A}',
+      restaurant: '\u{1F37D}\uFE0F', cafe: '\u2615', park: '\u{1F333}', office: '\u{1F3E2}',
+      school: '\u{1F393}', gym: '\u{1F4AA}', doctor: '\u{1F468}\u200D\u2695\uFE0F', airport: '\u2708\uFE0F',
+      train: '\u{1F686}', bus: '\u{1F68C}', petrol: '\u26FD', market: '\u{1F3EA}',
+      friend: '\u{1F46B}', family: '\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}', place: '\u{1F4CD}'
+    };
+
+    const APK_URL = 'https://github.com/vialo-widget/location-shortcut-widget/releases/download/latest/app-release.apk';
+
+    function init() {
+      const params = new URLSearchParams(window.location.search);
+      const label = params.get('label');
+      const lat   = params.get('lat');
+      const lng   = params.get('lng');
+      const icon  = params.get('icon') || 'place';
+
+      if (!label || !lat || !lng) {
+        document.getElementById('error-state').classList.remove('hidden');
+        return;
+      }
+
+      // Build the deep link and intent URL for the "Open in Vialo" button.
+      // We never fire this automatically — the user taps it knowingly.
+      const queryParams = 'label=' + encodeURIComponent(label) +
+                          '&lat=' + lat + '&lng=' + lng + '&icon=' + icon;
+      const deepLink  = 'vialo://add?' + queryParams;
+      const intentUrl = 'intent://add?' + queryParams +
+                        '#Intent;scheme=vialo;package=com.vialo.app;' +
+                        'S.browser_fallback_url=' + encodeURIComponent(APK_URL) + ';end';
+
+      // Populate the card immediately — no loading spinner, no redirect.
+      document.getElementById('place-icon').textContent =
+        iconMap[icon] || '\u{1F4CD}';
+      document.getElementById('place-label').textContent =
+        decodeURIComponent(label);
+
+      // "Open in Vialo": use intent URL on Android (handles fallback to APK
+      // download if app not found), plain deep link on other platforms.
+      const isAndroid = /android/i.test(navigator.userAgent);
+      document.getElementById('btn-open-app').href =
+        isAndroid ? intentUrl : deepLink;
+
+      document.getElementById('main-content').classList.remove('hidden');
+    }
+
+    init();
+  </script>
+</body>
+</html>
